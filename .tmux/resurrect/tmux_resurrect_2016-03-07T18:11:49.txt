@@ -1,0 +1,7 @@
+pane	latex	1	:bash	0	:-	1	:/home/marco/ITA/DAGA/DAGA2016/MA/Poster/Beamerposter	1	bash	:
+pane	latex	2	:vim	1	:*	1	:/home/marco/ITA/DAGA/DAGA2016/MA/Poster/Beamerposter	1	vim	:vim
+pane	latex	3	:vim	0	:	1	:/home/marco/ITA/DAGA/DAGA2016/MA/Poster/Beamerposter	1	vim	:vim /home/marco/.vimrc
+window	latex	1	0	:-	cae3,237x66,0,0,6
+window	latex	2	1	:*	cade,237x66,0,0,1
+window	latex	3	0	:	cae1,237x66,0,0,4
+state	latex	
