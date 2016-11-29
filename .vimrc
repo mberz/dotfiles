@@ -20,19 +20,38 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 set laststatus=2
 
-execute pathogen#infect()
+"execute pathogen#infect()
 
 Bundle 'tpope/vim-fugitive'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'scrooloose/nerdtree'
+
+Bundle 'Xuyuanp/nerdtree-git-plugin'
+
+" what was that again?
+Bundle 'ervandew/screen'
+" matlab behaviour
+Bundle 'dajero/VimLab'
+"  automatic code analysis
+Bundle 'scrooloose/syntastic'
+"Bundle 'edsono/vim-matchit'
+
+Bundle 'tmhedberg/matchit'
+
+Bundle 'SirVer/ultisnips'
+Bundle 'ervandew/supertab'
+
+
+Bundle 'ctrlpvim/ctrlp.vim'
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Nerdtree extension
 " use nerdtree as file explorer if no file is specified on opening vim
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-Bundle 'Xuyuanp/nerdtree-git-plugin'
+" nerdtree git icons
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
@@ -47,6 +66,7 @@ let g:NERDTreeIndicatorMapCustom = {
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Set colorscheme
+let g:solarized_termcolors=256
 syntax enable
 set background=dark
 " set background=light
@@ -64,12 +84,7 @@ cabbrev wQ wq cr
 "" MATLAB STUFF
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
-Bundle "ervandew/screen"
-Bundle "dajero/VimLab"
-"Optional, if you desire automatic code analysis
-Bundle "scrooloose/syntastic"
-
-source $VIMRUNTIME/macros/matchit.vim
+"#source $VIMRUNTIME/macros/matchit.vim
 
 " matlab behave
 let g:matlab_behave_paste_cmd="Ctrl+Shift+v"
@@ -170,9 +185,7 @@ set clipboard=unnamedplus
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 """ ultisnippets
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "SirVer/ultisnips"
-Bundle 'ervandew/supertab'
-set runtimepath+=~/.dotfiles/
+"set runtimepath+=~/.dotfiles/
 
 " let g:UltiSnipsSnippetDirectories=["~/.dotfiles/UltiSnips/"]
 " make YCM compatible with UltiSnips (using supertab)
@@ -187,7 +200,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 
-Bundle "ctrlpvim/ctrlp.vim"
 "
 " spellcheck
 set spelllang=en_us spell
