@@ -20,6 +20,8 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 set laststatus=2
 
+
+
 "execute pathogen#infect()
 
 Bundle 'tpope/vim-fugitive'
@@ -45,6 +47,16 @@ Bundle 'ervandew/supertab'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'tomtom/tcomment_vim'
 
+"_________________________________________
+" set colorscheme
+syntax enable
+set background=dark
+" set background=light
+colorscheme solarized
+
+
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Nerdtree extension
 " use nerdtree as file explorer if no file is specified on opening vim
@@ -65,13 +77,6 @@ let g:NERDTreeIndicatorMapCustom = {
     \ }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-" Set colorscheme
-let g:solarized_termcolors=256
-syntax enable
-set background=dark
-" set background=light
-colorscheme solarized
-
 " some commands to avoid typos
 cabbrev Q quit
 cabbrev W write
