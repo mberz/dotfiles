@@ -43,7 +43,7 @@ Bundle 'ervandew/supertab'
 
 
 Bundle 'ctrlpvim/ctrlp.vim'
-
+Bundle 'tomtom/tcomment_vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Nerdtree extension
