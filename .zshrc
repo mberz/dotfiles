@@ -51,7 +51,7 @@ export AVR_TOOLS_DIR=/usr
 . /usr/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # make matlab use systems java 
-# export J2D_D3D=false
-# export MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre
+export J2D_D3D=false
+export MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre
 
 
