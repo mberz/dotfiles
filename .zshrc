@@ -48,7 +48,7 @@ export AVR_TOOLS_DIR=/usr
 
 ####################################################################################
 # powerline bash support
-. /usr/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
+. /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # make matlab use systems java 
 export J2D_D3D=false
