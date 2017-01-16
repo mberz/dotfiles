@@ -212,7 +212,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 set spelllang=en_us spell
 
 "ctags
-set tags=./tags;,tags;
+set tags=./tags;~/vimtags;
 set tags+=./matlabTags;~/
 let g:ycm_collect_identifiers_from_tags_files = 1
 nmap <F8> :TagbarToggle<CR>
