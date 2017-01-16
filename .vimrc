@@ -47,7 +47,11 @@ Bundle 'ervandew/supertab'
 
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'tomtom/tcomment_vim'
+
+" tags
 Bundle 'majutsushi/tagbar'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-easytags'
 
 "_________________________________________
 " set colorscheme
