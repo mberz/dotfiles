@@ -53,6 +53,9 @@ Bundle 'majutsushi/tagbar'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
 
+" editor config
+Bundle 'editorconfig/editorconfig-vim'
+
 "_________________________________________
 " set colorscheme
 syntax enable
