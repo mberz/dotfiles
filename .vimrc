@@ -222,7 +222,10 @@ set spelllang=en_us spell
 
 "ctags
 set tags=./tags;~/vimtags;
-set tags+=./matlabTags;~/
+set tags+=~/matlabTags
+let g:easytags_file = '~/.vim/tags'
+let g:easytags_dynamic_files = 1
+:let g:easytags_auto_update = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 nmap <F8> :TagbarToggle<CR>
 
