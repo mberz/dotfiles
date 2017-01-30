@@ -26,6 +26,8 @@ set laststatus=2
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
+Bundle 'jiangmiao/auto-pairs'
+
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
 
@@ -221,12 +223,16 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 set spelllang=en_us spell
 
 "ctags
-set tags=./tags;~/vimtags;
-set tags+=~/matlabTags
-let g:easytags_file = '~/.vim/tags'
+let g:easytags_file = '~/ctagsFiles/easytags'
+let g:easytags_async = 1
 let g:easytags_dynamic_files = 1
-:let g:easytags_auto_update = 1
+let g:easytags_auto_update = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
+set tags=./tags
+set tags+=~/ctagsFiles/easytags
+set tags+=~/matlabTags
+set tags+=~/ctagsFiles/matlabCoreTags
+
 nmap <F8> :TagbarToggle<CR>
 
 "generate tags automatically
