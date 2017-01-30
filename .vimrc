@@ -27,6 +27,7 @@ set laststatus=2
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'jiangmiao/auto-pairs'
+Bundle 'junegunn/vim-easy-align'
 
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
@@ -39,8 +40,8 @@ Bundle 'ervandew/screen'
 Bundle 'dajero/VimLab'
 "  automatic code analysis
 Bundle 'scrooloose/syntastic'
-"Bundle 'edsono/vim-matchit'
 
+" show matching for brackets,etc
 Bundle 'tmhedberg/matchit'
 
 Bundle 'SirVer/ultisnips'
@@ -57,6 +58,7 @@ Bundle 'xolox/vim-easytags'
 
 " editor config
 Bundle 'editorconfig/editorconfig-vim'
+Bundle 'Valloric/YouCompleteMe'
 
 "_________________________________________
 " set colorscheme
@@ -135,6 +137,11 @@ nnoremap k gk
 nnoremap j gj
 nnoremap gk k
 nnoremap gj j
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " split related stuff
 map <silent> <C-h> :call WinMove('h')<cr>
