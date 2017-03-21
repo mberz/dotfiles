@@ -23,9 +23,9 @@ bindkey -v
 alias ls='ls --color=auto'
 
 # aliases for ls with hidden files and permissions
-alias la='ls --color=auto -a'
+alias la='ls --color=auto -al'
 alias ll='ls --color=auto -l'
-alias lla='ls --color=auto -al'
+# alias lla='ls --color=auto -al'
 
 # alias for xdg-open
 alias open='xdg-open'
