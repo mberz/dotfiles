@@ -59,6 +59,7 @@ Bundle 'xolox/vim-easytags'
 " editor config
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'rdnetto/YCM-Generator'
 
 "_________________________________________
 " set colorscheme
@@ -125,8 +126,8 @@ let g:syntastic_check_on_wq = 0
 let g:ycm_filepath_completion_use_working_dir = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 
-"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/'
-:let g:tex_flavor = 'latex'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:tex_flavor = 'latex'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -153,8 +154,12 @@ map <silent> <C-l> :call WinMove('l')<cr>
 " toggle nerdtree
 map <C-N> :NERDTreeToggle<CR>
 
+" out/comment line 
 map <silent> <C-E><b> :TCommentBlock<CR>
 map <silent> <C-E> :TComment<CR>
+
+" YCM FixIt
+map <F12> :YcmCompleter FixIt<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ Functions
@@ -237,6 +242,7 @@ let g:easytags_auto_update = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 set tags=./tags
 set tags+=~/ctagsFiles/easytags
+set tags+=~/ctagsFiles/tags
 set tags+=~/matlabTags
 set tags+=~/ctagsFiles/matlabCoreTags
 
