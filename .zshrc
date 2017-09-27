@@ -52,6 +52,13 @@ export AVR_TOOLS_DIR=/usr
 
 # make matlab use systems java 
 export J2D_D3D=false
-export MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre
+# export MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre
 
+# export matlab for jupyter
+export MATLAB_EXECUTABLE=/usr/local/MATLAB/R2016b/bin/matlab
 
+####################################################################################
+# bindings to search history in zsh
+bindkey -v
+bindkey '\e[3~' delete-char
+bindkey '^R' history-incremental-search-backward

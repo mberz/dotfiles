@@ -54,7 +54,7 @@ Bundle 'tomtom/tcomment_vim'
 " tags
 Bundle 'majutsushi/tagbar'
 Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-easytags'
+" Bundle 'xolox/vim-easytags'
 
 " editor config
 Bundle 'editorconfig/editorconfig-vim'
@@ -138,6 +138,11 @@ nnoremap k gk
 nnoremap j gj
 nnoremap gk k
 nnoremap gj j
+
+nnoremap K 10k
+nnoremap J 10j
+nnoremap H 5h
+nnoremap L 5l
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -235,14 +240,15 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 set spelllang=en_us spell
 
 "ctags
-let g:easytags_file = '~/ctagsFiles/easytags'
-let g:easytags_async = 1
-let g:easytags_dynamic_files = 1
-let g:easytags_auto_update = 1
+" let g:easytags_file = '~/ctagsFiles/easytags'
+" let g:easytags_async = 1
+" let g:easytags_dynamic_files = 1
+" let g:easytags_auto_update = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 set tags=./tags
 set tags+=~/ctagsFiles/easytags
-set tags+=~/ctagsFiles/tags
+set tags+=~/ctagsFiles/stdlinux
+set tags+=~/ctagsFiles/boost
 set tags+=~/matlabTags
 set tags+=~/ctagsFiles/matlabCoreTags
 
