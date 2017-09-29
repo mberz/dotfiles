@@ -61,6 +61,8 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'rdnetto/YCM-Generator'
 
+Bundle 'bagrat/vim-workspace'
+
 "_________________________________________
 " set colorscheme
 syntax enable
@@ -252,7 +254,18 @@ set tags+=~/ctagsFiles/boost
 set tags+=~/matlabTags
 set tags+=~/ctagsFiles/matlabCoreTags
 
+" Tagbar
 nmap <F8> :TagbarToggle<CR>
+
+" Vim-Workspace
+noremap <C-t> :WSTabNew<CR>
+noremap <C-t><C-w> :WSClose<CR>
+noremap <S-Tab> :WSNext<CR>
+
+let g:workspace_powerline_separators = 1
+" let g:workspace_tab_icon = "\uf00a"
+let g:workspace_left_trunc_icon = "\uf0a8"
+let g:workspace_right_trunc_icon = "\uf0a9"
 
 "generate tags automatically
 let tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsections'
