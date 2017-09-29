@@ -44,8 +44,9 @@ Bundle 'scrooloose/syntastic'
 " show matching for brackets,etc
 Bundle 'tmhedberg/matchit'
 
-Bundle 'SirVer/ultisnips'
+" supertab needed for ultisnips to work with youcompleteme
 Bundle 'ervandew/supertab'
+Bundle 'SirVer/ultisnips'
 
 
 Bundle 'ctrlpvim/ctrlp.vim'
@@ -222,18 +223,21 @@ set clipboard=unnamedplus
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 """ ultisnippets
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-"set runtimepath+=~/.dotfiles/
+set runtimepath+=~/dotfiles/
 
-" let g:UltiSnipsSnippetDirectories=["~/.dotfiles/UltiSnips/"]
+let g:UltiSnipsUsePythonVersion = 3
+" let g:UltiSnipsSnippetDirectories=["/home/marco/dotfiles/UltiSnips/"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-j>'
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
  " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -268,7 +272,7 @@ let g:workspace_left_trunc_icon = "\uf0a8"
 let g:workspace_right_trunc_icon = "\uf0a9"
 
 "generate tags automatically
-let tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsections'
+" let tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsections'
 
 
 " cursor
