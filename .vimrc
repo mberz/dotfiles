@@ -62,7 +62,11 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'rdnetto/YCM-Generator'
 
+" buffer/splits workspace
 Bundle 'bagrat/vim-workspace'
+
+"indenting guides
+Bundle 'nathanaelkane/vim-indent-guides'
 
 "_________________________________________
 " set colorscheme
@@ -270,6 +274,14 @@ let g:workspace_powerline_separators = 1
 " let g:workspace_tab_icon = "\uf00a"
 let g:workspace_left_trunc_icon = "\uf0a8"
 let g:workspace_right_trunc_icon = "\uf0a9"
+
+" indent guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 2
+let g:indent_guides_auto_colors = 0
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=black
 
 "generate tags automatically
 " let tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsections'
