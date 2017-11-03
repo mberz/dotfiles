@@ -232,6 +232,7 @@ set runtimepath+=~/dotfiles/
 let g:UltiSnipsUsePythonVersion = 3
 " let g:UltiSnipsSnippetDirectories=["/home/marco/dotfiles/UltiSnips/"]
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+let g:ultisnips_python_style = "numpy"
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
