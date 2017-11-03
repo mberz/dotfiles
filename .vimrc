@@ -5,6 +5,8 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 set shell=zsh\ --login
+set encoding=utf-8
+set fileencoding=utf-8
 
 " let Vundle manage Vundle
 " required! 
