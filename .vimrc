@@ -26,14 +26,23 @@ set laststatus=2
 
 "execute pathogen#infect()
 
+" git plugins
 Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
+
+" add surrounding brackets, etc
 Bundle 'tpope/vim-surround'
+" close brackets, etc of opened
 Bundle 'jiangmiao/auto-pairs'
+
+" alignment of text
 Bundle 'junegunn/vim-easy-align'
 
+" solarized colorscheme
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'scrooloose/nerdtree'
 
+" explorer style tree
+Bundle 'scrooloose/nerdtree'
 Bundle 'Xuyuanp/nerdtree-git-plugin'
 
 " what was that again?
