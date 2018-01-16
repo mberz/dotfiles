@@ -145,6 +145,9 @@ let g:ycm_filepath_completion_use_working_dir = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+"Use python binary from path. If in a virtual env the corresponding binary
+"from the venv will be used
+let g:ycm_python_binary_path = 'python'
 let g:tex_flavor = 'latex'
 
 
