@@ -79,6 +79,9 @@ Bundle 'bagrat/vim-workspace'
 "indenting guides
 Bundle 'nathanaelkane/vim-indent-guides'
 
+" Hightlight trailing whitespaces
+Bundle 'ntpeters/vim-better-whitespace'
+
 "_________________________________________
 " set colorscheme
 syntax enable
