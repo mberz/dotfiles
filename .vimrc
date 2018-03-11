@@ -151,8 +151,12 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 "Use python binary from path. If in a virtual env the corresponding binary
 "from the venv will be used
 let g:ycm_python_binary_path = 'python'
-let g:tex_flavor = 'latex'
 
+"Latex completion
+let g:tex_flavor = 'latex'
+let g:ycm_semantic_triggers = {
+	\ 'tex'  : ['{']
+\}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 "" KEYMAPPINGS
@@ -301,8 +305,6 @@ let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=black
 
-"generate tags automatically
-" let tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsections'
 
 
 " cursor
