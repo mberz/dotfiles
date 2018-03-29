@@ -9,7 +9,7 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " The bundles you install will be listed here
@@ -81,6 +81,9 @@ Bundle 'nathanaelkane/vim-indent-guides'
 
 " Hightlight trailing whitespaces
 Bundle 'ntpeters/vim-better-whitespace'
+
+" Makeshift to automatically choose the buildsystem
+Bundle 'johnsyweb/vim-makeshift'
 
 "_________________________________________
 " set colorscheme
@@ -187,12 +190,16 @@ map <silent> <C-l> :call WinMove('l')<cr>
 " toggle nerdtree
 map <C-N> :NERDTreeToggle<CR>
 
-" out/comment line 
+" out/comment line
 map <silent> <C-E><b> :TCommentBlock<CR>
 map <silent> <C-E> :TComment<CR>
 
 " YCM FixIt
 map <F12> :YcmCompleter FixIt<CR>
+
+" Bind F6 key to run the buildsystem
+" Makeshift will take care of choosing the buildsystem
+nnoremap <F6> :<C-U>make<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ Functions
@@ -311,7 +318,7 @@ hi IndentGuidesEven ctermbg=black
 if has("autocmd")
 	au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
 	au InsertEnter,InsertChange *
-		\ if v:insertmode == 'i' | 
+		\ if v:insertmode == 'i' |
 		\   silent execute '!echo -ne "\e[6 q"' | redraw! |
 		\ elseif v:insertmode == 'r' |
 		\   silent execute '!echo -ne "\e[4 q"' | redraw! |
@@ -319,4 +326,4 @@ if has("autocmd")
 	au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
 " vundle end here
-call vundle#end() 
+call vundle#end()
