@@ -28,7 +28,8 @@ set laststatus=2
 
 " git plugins
 Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
+" Bundle 'airblade/vim-gitgutter'
+Bundle 'mhinz/vim-signify'
 
 " add surrounding brackets, etc
 Bundle 'tpope/vim-surround'
@@ -141,8 +142,8 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-"let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
@@ -155,7 +156,7 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 "from the venv will be used
 let g:ycm_python_binary_path = 'python'
 
-"Latex completion
+"Latex completion with vimtex semantic completion plugin for YCM
 let g:tex_flavor = 'latex'
 let g:ycm_semantic_triggers = {
 	\ 'tex'  : ['{']
@@ -285,11 +286,6 @@ set spelllang=en_us spell
 " let g:easytags_auto_update = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 set tags=./tags
-set tags+=~/ctagsFiles/easytags
-set tags+=~/ctagsFiles/stdlinux
-set tags+=~/ctagsFiles/boost
-set tags+=~/matlabTags
-set tags+=~/ctagsFiles/matlabCoreTags
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -312,6 +308,11 @@ let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=black
 
+" add linewidht maker
+set colorcolumn=80
+
+"generate tags automatically
+" let tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsections'
 
 
 " cursor

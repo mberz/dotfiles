@@ -1,0 +1,3 @@
+cmake
+
+powerline-fonts-git
