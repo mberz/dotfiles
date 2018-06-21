@@ -89,8 +89,8 @@ Bundle 'johnsyweb/vim-makeshift'
 "_________________________________________
 " set colorscheme
 syntax enable
-set background=dark
-" set background=light
+" set background=dark
+set background=light
 colorscheme solarized
 
 
@@ -269,7 +269,7 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
  " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsExpandTrigger="<c-space>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
