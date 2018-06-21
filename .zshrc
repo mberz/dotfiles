@@ -129,7 +129,7 @@ alias open='xdg-open'
 
 ####################################################################################
 #set standard cl text editor
-export EDITOR="vim" 
+export EDITOR="vim"
 
 ####################################################################################
 # arduino makefile stuff
@@ -141,12 +141,13 @@ export AVR_TOOLS_DIR=/usr
 # powerline bash support
 # . /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 
-# make matlab use systems java 
+# make matlab use systems java
+# TODO: this might actually cause issues sometimes...
 export J2D_D3D=false
-export MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre
+# export MATLAB_JAVA=/usr/lib/jvm/java-8-openjdk/jre
 
 # export matlab for jupyter
-export MATLAB_EXECUTABLE=/usr/local/MATLAB/R2016b/bin/matlab
+# export MATLAB_EXECUTABLE=/usr/local/MATLAB/R2017b/bin/matlab
 
 ####################################################################################
 # bindings to search history in zsh
