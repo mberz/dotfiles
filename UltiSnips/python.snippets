@@ -541,27 +541,13 @@ def ${1:name}(self):
 endsnippet
 
 snippet rwprop "Read write property" b
-def ${1:name}():
-	`!p snip.rv = triple_quotes(snip) if t[2] else ''
-`${2:TODO: Docstring for $1.}`!p
-if t[2]:
-	snip >> 1
+@property
+def ${1:name}(self):
+	return self.${2:_$1}
 
-	style = get_style(snip)
-	snip.rv += '\n' + snip.mkline('', indent='')
-	snip += format_return(style)
-	snip.rv += '\n' + snip.mkline('', indent='')
-	snip += triple_quotes(snip)
-else:
-	snip.rv = ""`
-	def fget(self):
-		return self._$1$0
-
-	def fset(self, value):
-		self._$1 = value
-	return locals()
-
-$1 = property(**$1(), doc=$1.__doc__)
+@$1.setter
+def $1(self, ${3:value}):
+	self.$2 = $3$0
 endsnippet
 
 
