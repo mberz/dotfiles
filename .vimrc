@@ -60,9 +60,20 @@ Bundle 'tmhedberg/matchit'
 Bundle 'ervandew/supertab'
 Bundle 'SirVer/ultisnips'
 
-
+" fuzzy finding and file opening
 Bundle 'ctrlpvim/ctrlp.vim'
+
+" toggle comments
 Bundle 'tomtom/tcomment_vim'
+
+" run pytest from vim
+Bundle 'janko-m/vim-test'
+
+" run command in tmux window
+Bundle 'benmills/vimux'
+
+" dispatch commands asynchronously
+Bundle 'tpope/vim-dispatch'
 
 " tags
 Bundle 'majutsushi/tagbar'
@@ -116,7 +127,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-" some commands to avoid typos
+" some commands to avoid typos when saving and closing
 cabbrev Q quit
 cabbrev W write
 
@@ -124,18 +135,16 @@ cabbrev WQ wq cr
 cabbrev Wq wq cr
 cabbrev wQ wq cr
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" MATLAB STUFF
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 "#source $VIMRUNTIME/macros/matchit.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " matlab behave
 let g:matlab_behave_paste_cmd="Ctrl+Shift+v"
 let g:matlab_behave_software="matlab"
 let g:matlab_behave_mapping_kind=-1
 
-" syntastic
+" Syntastic
+"
 "let g:syntastic_cpp_auto_refresh_includes=1
 "
 set statusline+=%#warningmsg#
@@ -146,6 +155,8 @@ set statusline+=%*
 " let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+""" Youcompleteme
 
 "let g:ycm_show_diagnostics_ui = 0
 let g:ycm_filepath_completion_use_working_dir = 1
@@ -161,6 +172,13 @@ let g:tex_flavor = 'latex'
 let g:ycm_semantic_triggers = {
 	\ 'tex'  : ['{']
 \}
+
+""" Vim-Test
+let test#strategy = {
+	\ 'nearest': 'dispatch',
+	\ 'file'   : 'dispatch',
+	\ 'suite'  : 'make',
+	\}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 "" KEYMAPPINGS
@@ -201,6 +219,11 @@ map <F12> :YcmCompleter FixIt<CR>
 " Bind F6 key to run the buildsystem
 " Makeshift will take care of choosing the buildsystem
 nnoremap <F6> :<C-U>make<CR>
+
+" Vim-Test
+nmap <silent> tn :TestNearest<CR>
+nmap <silent> tf :TestFile<CR>
+nmap <silent> ta :TestSuite<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ Functions
@@ -304,9 +327,9 @@ let g:workspace_right_trunc_icon = "\uf0a9"
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 2
-let g:indent_guides_auto_colors = 0
-hi IndentGuidesOdd  ctermbg=black
-hi IndentGuidesEven ctermbg=black
+let g:indent_guides_auto_colors = 1
+" hi IndentGuidesOdd  ctermbg=black
+" hi IndentGuidesEven ctermbg=black
 
 " add linewidht maker
 set colorcolumn=80
