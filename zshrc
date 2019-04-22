@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/marco/.oh-my-zsh
+  export ZSH=/Users/marco/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -111,15 +111,15 @@ bindkey -v
 #
 ####################################################################################
 # custrom aliases
-alias ls='ls --color=auto'
+# alias ls='ls --color=auto'
 
 # aliases for ls with hidden files and permissions
-alias la='ls --color=auto -al'
-alias ll='ls --color=auto -l'
+# alias la='ls --color=auto -al'
+# alias ll='ls --color=auto -l'
 # alias lla='ls --color=auto -al'
 
 # alias for xdg-open
-alias open='xdg-open'
+# alias open='xdg-open'
 
 ####################################################################################
 # standard arch linux setting
@@ -154,3 +154,8 @@ export J2D_D3D=false
 bindkey -v
 bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
+
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+# export LDFLAGS="-L/usr/local/opt/llvm/lib"
+# export CPPFLAGS="-I/usr/local/opt/llvm/include"
+export HOMEBREW_GITHUB_API_TOKEN=86847a276f9e935d16ea7ac1e6e78d481790d076

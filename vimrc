@@ -17,9 +17,13 @@ Bundle 'gmarik/vundle'
 filetype plugin indent on
 
 " The rest of your config follows here
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " Powerline setup
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+"
+
+Bundle "vim-airline/vim-airline"
+Bundle "vim-airline/vim-airline-themes"
 set laststatus=2
 
 
@@ -97,6 +101,10 @@ Bundle 'ntpeters/vim-better-whitespace'
 " Makeshift to automatically choose the buildsystem
 Bundle 'johnsyweb/vim-makeshift'
 
+" latex mode "
+Bundle 'lervag/vimtex'
+
+
 "_________________________________________
 " set colorscheme
 syntax enable
@@ -167,11 +175,12 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 "from the venv will be used
 let g:ycm_python_binary_path = 'python'
 
-"Latex completion with vimtex semantic completion plugin for YCM
+"Latex completion with vimtex semantic completion and YCM
 let g:tex_flavor = 'latex'
-let g:ycm_semantic_triggers = {
-	\ 'tex'  : ['{']
-\}
+if !exists('g:ycm_semantic_triggers')
+    let g:ycm_semantic_triggers = {}
+endif
+au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 
 """ Vim-Test
 let test#strategy = {
@@ -272,9 +281,14 @@ set sw=4
 set mouse=a
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+""" fix backspace behavior on macOS
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+set backspace=indent,eol,start
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ yank x11 clipboard
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 """ ultisnippets
