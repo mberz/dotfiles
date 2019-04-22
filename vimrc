@@ -17,18 +17,11 @@ Bundle 'gmarik/vundle'
 filetype plugin indent on
 
 " The rest of your config follows here
-" Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-" Powerline setup
-" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
-"
 
+"  Airline instead of powerline
 Bundle "vim-airline/vim-airline"
 Bundle "vim-airline/vim-airline-themes"
 set laststatus=2
-
-
-
-"execute pathogen#infect()
 
 " git plugins
 Bundle 'tpope/vim-fugitive'
@@ -52,10 +45,12 @@ Bundle 'Xuyuanp/nerdtree-git-plugin'
 
 " what was that again?
 Bundle 'ervandew/screen'
+
 " matlab behaviour
 Bundle 'dajero/VimLab'
+
 "  automatic code analysis
-Bundle 'scrooloose/syntastic'
+Bundle 'w0rp/ale'
 
 " show matching for brackets,etc
 Bundle 'tmhedberg/matchit'
@@ -86,6 +81,8 @@ Bundle 'xolox/vim-misc'
 
 " editor config
 Bundle 'editorconfig/editorconfig-vim'
+
+" autocomplete
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'rdnetto/YCM-Generator'
 
@@ -101,7 +98,7 @@ Bundle 'ntpeters/vim-better-whitespace'
 " Makeshift to automatically choose the buildsystem
 Bundle 'johnsyweb/vim-makeshift'
 
-" latex mode "
+" latex mode
 Bundle 'lervag/vimtex'
 
 
@@ -151,22 +148,11 @@ let g:matlab_behave_paste_cmd="Ctrl+Shift+v"
 let g:matlab_behave_software="matlab"
 let g:matlab_behave_mapping_kind=-1
 
-" Syntastic
-"
-"let g:syntastic_cpp_auto_refresh_includes=1
-"
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" Code checking and linting
+let g:airline#extensions#ale#enabled = 1
 
 """ Youcompleteme
 
-"let g:ycm_show_diagnostics_ui = 0
 let g:ycm_filepath_completion_use_working_dir = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 
