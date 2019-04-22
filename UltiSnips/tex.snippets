@@ -44,6 +44,11 @@ def add_row(snip):
 
 endglobal
 
+snippet head "Root file and spellcheck lang"
+%!TEX root = $1.tex
+%!TeX spellcheck = en-US
+endsnippet
+
 snippet "b(egin)?" "begin{} / end{}" br
 \begin{${1:something}}
 	${0:${VISUAL}}
