@@ -1,5 +1,14 @@
 #!/bin/sh
 
+# unlink all existing config files
+unlink .vimrc
+unlink .vim
+unlink .tmux.conf
+unlink .tmux
+unlink .zprofile
+unlink .zshrc
+
+
 # copy dotfiles for vim
 ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/vim ~/.vim
