@@ -87,7 +87,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'rdnetto/YCM-Generator'
 
 " buffer/splits workspace
-Bundle 'bagrat/vim-workspace'
+" Bundle 'bagrat/vim-workspace'
 
 "indenting guides
 Bundle 'nathanaelkane/vim-indent-guides'
@@ -213,7 +213,8 @@ map <F12> :YcmCompleter FixIt<CR>
 
 " Bind F6 key to run the buildsystem
 " Makeshift will take care of choosing the buildsystem
-nnoremap <F6> :<C-U>make<CR>
+nnoremap <F5> :Make!<CR>
+nnoremap <F6> :Make<CR>
 
 " Vim-Test
 nmap <silent> tn :TestNearest<CR>
