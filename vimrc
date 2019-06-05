@@ -25,7 +25,7 @@ set laststatus=2
 
 " git plugins
 Bundle 'tpope/vim-fugitive'
-" Bundle 'airblade/vim-gitgutter'
+" git diffs in vim
 Bundle 'mhinz/vim-signify'
 
 " add surrounding brackets, etc
@@ -57,6 +57,8 @@ Bundle 'tmhedberg/matchit'
 
 " supertab needed for ultisnips to work with youcompleteme
 Bundle 'ervandew/supertab'
+
+" nice snippets
 Bundle 'SirVer/ultisnips'
 
 " fuzzy finding and file opening
@@ -77,7 +79,6 @@ Bundle 'tpope/vim-dispatch'
 " tags
 Bundle 'majutsushi/tagbar'
 Bundle 'xolox/vim-misc'
-" Bundle 'xolox/vim-easytags'
 
 " editor config
 Bundle 'editorconfig/editorconfig-vim'
@@ -150,6 +151,8 @@ let g:matlab_behave_mapping_kind=-1
 
 " Code checking and linting
 let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 """ Youcompleteme
 
