@@ -96,6 +96,9 @@ Plug 'editorconfig/editorconfig-vim'
 " Plug 'rdnetto/YCM-Generator'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" yank buffer hostory
+Plug 'neoclide/coc-yank'
+
 " buffer/splits workspace
 " Plug 'bagrat/vim-workspace'
 
@@ -133,7 +136,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " nerdtree git icons
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
