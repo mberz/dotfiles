@@ -1,7 +1,13 @@
 set nocompatible
 filetype off
 
-" Plug plugin manager
+" Install Plug plugin manager if missing
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+" begin installing plugins
 call plug#begin('~/.vim/plugged')
 " set rtp+=~/.vim/bundle/vundle/
 " call vundle#rc()
