@@ -98,6 +98,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " yank buffer hostory
 Plug 'neoclide/coc-yank'
+" Plug 'fannheyward/coc-texlab'
 
 " buffer/splits workspace
 " Plug 'bagrat/vim-workspace'
@@ -113,7 +114,7 @@ Plug 'johnsyweb/vim-makeshift'
 
 " latex mode
 Plug 'lervag/vimtex'
-
+Plug 'neoclide/coc-vimtex'
 
 call plug#end()
 "_________________________________________
@@ -317,9 +318,6 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
-
-
 
 
 """ Vim-Test
