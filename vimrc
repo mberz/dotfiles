@@ -9,22 +9,10 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 " begin installing plugins
 call plug#begin('~/.vim/plugged')
-" set rtp+=~/.vim/bundle/vundle/
-" call vundle#rc()
 
 set shell=zsh\ --login
 set encoding=utf-8
 set fileencoding=utf-8
-
-" let Vundle manage Vundle
-" required!
-" Bundle 'gmarik/vundle'
-
-" The bundles you install will be listed here
-
-" filetype plugin indent on
-
-" The rest of your config follows here
 
 "  Airline instead of powerline
 Plug 'vim-airline/vim-airline'
@@ -33,6 +21,7 @@ set laststatus=2
 
 " git plugins
 Plug 'tpope/vim-fugitive'
+
 " git diffs in vim
 Plug 'mhinz/vim-signify'
 
@@ -63,9 +52,6 @@ Plug 'w0rp/ale'
 " show matching for brackets,etc
 Plug 'tmhedberg/matchit'
 
-" supertab needed for ultisnips to work with youcompleteme
-" Plug 'ervandew/supertab'
-
 " nice snippets
 Plug 'SirVer/ultisnips'
 
@@ -92,16 +78,10 @@ Plug 'xolox/vim-misc'
 Plug 'editorconfig/editorconfig-vim'
 
 " autocomplete
-" Plug 'Valloric/YouCompleteMe'
-" Plug 'rdnetto/YCM-Generator'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " yank buffer hostory
 Plug 'neoclide/coc-yank'
-" Plug 'fannheyward/coc-texlab'
-
-" buffer/splits workspace
-" Plug 'bagrat/vim-workspace'
 
 "indenting guides
 Plug 'nathanaelkane/vim-indent-guides'
@@ -126,9 +106,6 @@ syntax enable
 set background=dark
 set background=light
 colorscheme solarized
-
-
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Nerdtree extension
@@ -171,23 +148,6 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-""" Youcompleteme
-
-" let g:ycm_filepath_completion_use_working_dir = 1
-" let g:ycm_collect_identifiers_from_tags_files = 1
-
-" let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-"Use python binary from path. If in a virtual env the corresponding binary
-"from the venv will be used
-" let g:ycm_python_binary_path = 'python'
-
-"Latex completion with vimtex semantic completion and YCM
-" let g:tex_flavor = 'latex'
-" if !exists('g:ycm_semantic_triggers')
-"     let g:ycm_semantic_triggers = {}
-" endif
-" au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
-"
 
 " CoC completion
 " if hidden is not set, TextEdit might fail.
@@ -405,8 +365,6 @@ function! NumberToggle()
 	endif
 endfunc
 
-" map <C-m> :call NumberToggle()<cr>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ tabstop sizes
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -439,29 +397,10 @@ let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 let g:ultisnips_python_style = "numpy"
 
-" make YCM compatible with UltiSnips (using supertab)
-" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-" let g:SuperTabDefaultCompletionType = '<C-n>'
-
- " better key bindings for UltiSnipsExpandTrigger
-" let g:UltiSnipsExpandTrigger="<c-space>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
 """""""""""""""""""""""""""""""""""""""""""""""""""
-
 "
 " spellcheck
 set spelllang=en_us spell
-
-"ctags
-" let g:easytags_file = '~/ctagsFiles/easytags'
-" let g:easytags_async = 1
-" let g:easytags_dynamic_files = 1
-" let g:easytags_auto_update = 1
-" let g:ycm_collect_identifiers_from_tags_files = 1
-" set tags=./tags
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -487,10 +426,6 @@ let g:indent_guides_auto_colors = 1
 " add linewidht maker
 set colorcolumn=80
 
-"generate tags automatically
-" let tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsections'
-
-
 " cursor
 if has("autocmd")
 	au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
@@ -502,5 +437,3 @@ if has("autocmd")
 		\ endif
 	au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
-" vundle end here
-" call vundle#end()
