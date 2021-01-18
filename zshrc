@@ -7,7 +7,8 @@ export ZSH=~/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="arrow"
+# ZSH_THEME="arrow"
+ZSH_THEME="kennethreitz_modified"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -60,6 +61,8 @@ ZSH_THEME="arrow"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  docker
+  virtualenv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -156,3 +159,6 @@ bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
 
 export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+# added by travis gem
+[ ! -s /Users/marco/.travis/travis.sh ] || source /Users/marco/.travis/travis.sh
