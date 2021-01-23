@@ -8,7 +8,7 @@ function virtualenv_info {
 
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
-PROMPT='%{$fg[green]%}%c \
+PROMPT='%{$fg[green]%}[%D{%L:%M:%S}]\
 %{$fg[blue]%}$(virtualenv_info)%{$reset_color%} \
 \
 %{$fg[red]%}%(!.#.»)%{$reset_color%} '
