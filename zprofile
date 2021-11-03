@@ -3,3 +3,6 @@
 
 # Add Python from Homebrew to the path
 export PATH=/usr/local/opt/python/libexec/bin:$PATH
+
+# Add homebrew to the path
+PATH="/usr/local/bin:$PATH"
