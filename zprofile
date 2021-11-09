@@ -5,4 +5,5 @@
 export PATH=/usr/local/opt/python/libexec/bin:$PATH
 
 # Add homebrew to the path
-PATH="/usr/local/bin:$PATH"
+export PATH=/usr/local/bin:$PATH
+eval "$(/opt/homebrew/bin/brew shellenv)"
