@@ -149,7 +149,7 @@ let g:matlab_behave_mapping_kind=-1
 " Code checking and linting
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 
 
 " CoC completion
