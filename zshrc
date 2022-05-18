@@ -63,6 +63,9 @@ plugins=(
   git
   docker
   virtualenv
+  osx
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -131,6 +134,11 @@ bindkey -v
 # [ -z "$TMUX" ] && export TERM=xterm-256color
 
 ####################################################################################
+# zsh-autosuggestions
+bindkey '^I'   complete-word       # tab          | complete
+bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
+
+####################################################################################
 #set standard cl text editor
 export EDITOR="vim"
 
@@ -162,3 +170,4 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # added by travis gem
 [ ! -s /Users/marco/.travis/travis.sh ] || source /Users/marco/.travis/travis.sh
+
