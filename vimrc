@@ -36,6 +36,9 @@ Plug 'junegunn/vim-easy-align'
 " solarized colorscheme
 Plug 'altercation/vim-colors-solarized'
 
+" One-monokai-colortheme
+Plug 'fratajczak/one-monokai-vim'
+
 " explorer style tree
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -106,9 +109,11 @@ call plug#end()
 
 
 syntax enable
-set background=dark
-set background=light
-colorscheme solarized
+" set background=dark
+" set background=light
+" colorscheme solarized
+colorscheme one-monokai
+set termguicolors
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Nerdtree extension
