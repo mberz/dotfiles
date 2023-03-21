@@ -26,4 +26,5 @@ ln -s ~/dotfiles/oh-my-zsh/custom ~/.oh-my-zsh/custom
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/tmux ~/.tmux
 
-
+# Neovim config folder
+ln -s ~/dotfiles/nvim ~/.config/nvim
