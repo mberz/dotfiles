@@ -63,209 +63,7 @@ vim.opt.rtp:prepend(lazypath)
 --
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
-require('lazy').setup({
-  -- NOTE: First, some plugins that don't require any configuration
-
-  -- Git related plugins
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-
-  -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
-
-  -- NOTE: This is where your plugins related to LSP can be installed.
-  --  The configuration is done below. Search for lspconfig to find it below.
-  { -- LSP Configuration & Plugins
-    'neovim/nvim-lspconfig',
-    dependencies = {
-      -- Automatically install LSPs to stdpath for neovim
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
-
-      -- Useful status updates for LSP
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
-
-      -- Additional lua configuration, makes nvim stuff amazing!
-      'folke/neodev.nvim',
-    },
-  },
-
-  { -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
-  },
-
-  { -- Null ls non-lsp-server related diagnostics
-    'jose-elias-alvarez/null-ls.nvim',
-  },
-
-  -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
-  { -- Adds git releated signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      -- See `:help gitsigns.txt`
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
-  },
-
-  { -- Theme inspired by Atom
-    'cpea2506/one_monokai.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'one_monokai'
-    end,
-  },
-
-  { -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'one_monokai',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
-  },
-
-  { -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
-  },
-
-  -- "mc" to comment visual regions/lines
-  {
-    'numToStr/Comment.nvim', opts = {
-      toggler = {
-        ---Line-comment toggle keymap
-        line = 'mcc',
-        ---Block-comment toggle keymap
-        block = 'mbc',
-      },
-      ---LHS of operator-pending mappings in NORMAL and VISUAL mode
-      opleader = {
-          ---Line-comment keymap
-          line = 'mc',
-          ---Block-comment keymap
-          block = 'mb',
-      },
-    },
-  },
-
-  -- Fuzzy Finder (files, lsp, etc)
-  { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
-
-  -- Fuzzy Finder Algorithm which requires local dependencies to be built.
-  -- Only load if `make` is available. Make sure you have the system
-  -- requirements installed.
-  {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    -- NOTE: If you are having trouble with this installation,
-    --       refer to the README for telescope-fzf-native for more instructions.
-    build = 'make',
-    cond = function()
-      return vim.fn.executable 'make' == 1
-    end,
-  },
-
-  { -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-    },
-    config = function()
-      pcall(require('nvim-treesitter.install').update { with_sync = true })
-    end,
-  },
-
-  {
-    "vim-test/vim-test",
-    keys = {
-      { "<leader>tc", "<cmd>TestClass<cr>", desc = "Class" },
-      { "<leader>tf", "<cmd>TestFile<cr>", desc = "File" },
-      { "<leader>tl", "<cmd>TestLast<cr>", desc = "Last" },
-      { "<leader>tn", "<cmd>TestNearest<cr>", desc = "Nearest" },
-      { "<leader>ts", "<cmd>TestSuite<cr>", desc = "Suite" },
-      { "<leader>tv", "<cmd>TestVisit<cr>", desc = "Visit" },
-    },
-    config = function()
-      vim.g["test#strategy"] = "neovim"
-      vim.g["test#neovim#term_position"] = "belowright"
-      vim.g["test#neovim#preserve_screen"] = 1
-      vim.g["test#python#runner"] = "pytest"
-    end,
-  },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-    },
-    keys = {
-      { "<leader>ft", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
-    },
-    config = function()
-      require("neo-tree").setup()
-    end,
-  },
-  -- {
-  --   "nvim-lua/plenary.nvim",
-  --   "nvim-neotest/neotest-vim-test",
-  --   "nvim-neotest/neotest-plenary",
-  --   "antoinemadec/FixCursorHold.nvim",
-  --   "nvim-neotest/neotest-python",
-  --   "nvim-neotest/neotest",
-  --   keys = {
-  --     { "<leader>tNF", "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", desc = "Debug File" },
-  --     { "<leader>tNL", "<cmd>lua require('neotest').run.run_last({strategy = 'dap'})<cr>", desc = "Debug Last" },
-  --     { "<leader>tNa", "<cmd>lua require('neotest').run.attach()<cr>", desc = "Attach" },
-  --     { "<leader>tNf", "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", desc = "File" },
-  --     { "<leader>tNl", "<cmd>lua require('neotest').run.run_last()<cr>", desc = "Last" },
-  --     { "<leader>tNn", "<cmd>lua require('neotest').run.run()<cr>", desc = "Nearest" },
-  --     { "<leader>tNN", "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", desc = "Debug Nearest" },
-  --     { "<leader>tNo", "<cmd>lua require('neotest').output.open({ enter = true })<cr>", desc = "Output" },
-  --     { "<leader>tNs", "<cmd>lua require('neotest').run.stop()<cr>", desc = "Stop" },
-  --     { "<leader>tNS", "<cmd>lua require('neotest').summary.toggle()<cr>", desc = "Summary" },
-  --   },
-  --   requires = {
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-neotest/neotest-python",
-  --     "nvim-neotest/neotest-vim-test",
-  --     "nvim-treesitter/nvim-treesitter",
-  --     "antoinemadec/FixCursorHold.nvim",
-  --   },
-  -- },
-
-  -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
-  --       These are some example plugins that I've included in the kickstart repository.
-  --       Uncomment any of the lines below to enable them.
-  -- require 'kickstart.plugins.autoformat',
-  -- require 'kickstart.plugins.debug',
-
-  -- NOTE: The import below automatically adds your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
-  --    up-to-date with whatever is in the kickstart repo.
-  --
-  --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  --
-  --    An additional note is that if you only copied in the `init.lua`, you can just comment this line
-  --    to get rid of the warning telling you that there are not plugins in `lua/custom/plugins/`.
-  { import = 'custom.plugins' },
-}, {})
+require('lazy').setup('plugins')
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -310,7 +108,7 @@ vim.o.termguicolors = true
 
 -- [[ Basic Keymaps ]]
 
--- Keymaps for better default experience
+-- Keymaps for better default experienceinit
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
@@ -523,6 +321,9 @@ mason_lspconfig.setup_handlers {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = servers[server_name],
+      diagnostics = {
+        virtual_text = false,
+      },
     }
   end,
 }
@@ -572,6 +373,18 @@ cmp.setup {
   },
 }
 
+vim.diagnostic.config({
+  virtual_text = false,
+  underline = true,
+})
+
+vim.keymap.set(
+  "",
+  "<Leader>ll",
+  require("lsp_lines").toggle,
+  { desc = "Toggle lsp_lines" }
+)
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 --
@@ -610,32 +423,3 @@ require("null-ls").setup({
     require("null-ls").builtins.diagnostics.chktex,
   },
 })
-
--- Configure neotest
--- require("neotest").setup({
---   adapters = {
---     require("neotest-python")({
---       dap = { justMyCode = false },
---     }),
---     require("neotest-plenary"),
---     require("neotest-vim-test")({
---       ignore_file_types = { "vim", "lua" },
---     }),
---   },
--- })
-
--- require("neotest").setup({
---   adapters = {
---     require("neotest-python")({
---       dap = { justMyCode = true },
---       runner = "pytest",
---     }),
---     require("neotest-plenary"),
---     require("neotest-vim-test")({
---       ignore_file_types = { "python", "vim", "lua" },
---     }),
---   }
--- })
-
--- vim.keymap.set('n', '<leader>tt', require('neotest').run.run, { desc = 'Run closest test' })
--- require("neotest").run.run()
