@@ -5,6 +5,7 @@ return {
     keys = {
       -- { "gsf", "<CMD>Gwrite<cr>",  desc = "Git stage file"},
       { "<leader>gc", "<CMD>Git commit<cr>",  desc = "Git commit"},
+      { "<leader>gC", "<CMD>Git commit --amend<cr>",  desc = "Git commit amend"},
       { "<leader>gp", "<CMD>Git push<cr>",  desc = "Git push"},
       { "<leader>gP", "<CMD>Git pull<cr>",  desc = "Git pull"},
     }
