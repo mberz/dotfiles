@@ -1,3 +1,4 @@
+-- cSpell:words lspconfig mason williamboman fidget jhui neodev cmp cmp-nvim-lsp cmp_luasnip luasnip null-ls lsp_lines neovim nvim stdpath hrsh saadparwaiz1 folke
 return {
 -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
