@@ -1,3 +1,4 @@
+-- cSpell:words iron nvim ipython zsh lspconfig hkupty scratch_repl repl_definition repl_open_cmd split vertical botright keymaps send_motion visual_send send_file send_line send_mark mark_motion mark_visual remove_mark cr interrupt exit clear highlight italic ignore_blank_lines
 return {
 -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -31,7 +32,7 @@ return {
           visual_send = "<leader>sc",
           send_file = "<leader>sf",
           send_line = "<leader>sl",
-          send_mark = "<leader>sm",
+          -- send_mark = "<leader>sm",
           mark_motion = "<leader>mc",
           mark_visual = "<leader>mc",
           remove_mark = "<leader>md",
@@ -48,7 +49,5 @@ return {
         ignore_blank_lines = true, -- ignore blank lines when sending visual select lines
       })
     end,
-
   },
-
 }
