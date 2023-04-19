@@ -378,6 +378,7 @@ cmp.setup {
 vim.diagnostic.config({
   virtual_text = false,
   underline = true,
+  virtual_lines = false,
 })
 
 vim.keymap.set(
@@ -416,11 +417,13 @@ map <silent> <C-l> <C-w><right>
 
 require("null-ls").setup({
   sources = {
-    -- require("null-ls").builtins.formatting.shfmt, -- shell script formatting
-    -- require("null-ls").builtins.formatting.prettier, -- markdown formatting
-    require("null-ls").builtins.diagnostics.flake8, -- flake9 script diagnostics
-    -- require("null-ls").builtins.diagnostics.cspell,
-    require("null-ls").builtins.diagnostics.cspell,
+    require("null-ls").builtins.diagnostics.flake8, -- flake8 script diagnostics
+    require("null-ls").builtins.diagnostics.cspell.with({
+      -- Force the severity to be HINT
+      diagnostics_postprocess = function(diagnostic)
+        diagnostic.severity = vim.diagnostic.severity.HINT
+      end,
+    }),
     require("null-ls").builtins.code_actions.cspell,
     require("null-ls").builtins.diagnostics.chktex,
   },
