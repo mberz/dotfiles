@@ -413,6 +413,16 @@ vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("n", "<", "<S-v><<esc>")
 vim.keymap.set("n", ">", "<S-v>><esc>")
 
+vim.keymap.set('', '<leader>bt', "<cmd>VimtexCompile<CR>", { desc = "build latex" })
+vim.keymap.set('', '<leader>lw', "<cmd>VimtexCountWords!<CR>", { desc = "count words" })
+vim.keymap.set('', '<leader>lc', "<cmd>VimtexClean<CR>", { desc = "clean aux files" })
+
+-- close and wrtie files
+vim.keymap.set('', '<leader>ww', "<cmd>w!<cr>", { desc = "Write file" })
+vim.keymap.set('', '<leader>wW', "<cmd>wa!<cr>", { desc = "Write all files" })
+vim.keymap.set('', '<leader>q', "<cmd>q<cr>", { desc = "clean aux files" })
+vim.keymap.set('', '<leader>Q', "<cmd>q!<cr>", { desc = "clean aux files" })
+
 -- split related stuff
 vim.cmd [[
 map <silent> <C-h> <C-w><left>
