@@ -407,6 +407,12 @@ nnoremap gj j
 vim.keymap.set('n', 'J', '10j', { silent = true })
 vim.keymap.set('n', 'K', '10k', { noremap=true, silent = true })
 
+-- Indentation
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+vim.keymap.set("n", "<", "<S-v><<esc>")
+vim.keymap.set("n", ">", "<S-v>><esc>")
+
 -- split related stuff
 vim.cmd [[
 map <silent> <C-h> <C-w><left>
