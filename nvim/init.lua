@@ -448,3 +448,11 @@ require("null-ls").setup({
     require("null-ls").builtins.diagnostics.proselint,
   },
 })
+
+
+-- vimtex config stuff
+-- default viewer
+vim.g['vimtex_view_method'] = 'zathura' -- dont know if this works
+vim.g['vimtex_quickfix_mode'] = 0 -- dont know if this works
+vim.g['vimtex_view_method'] = 'skim'
+
