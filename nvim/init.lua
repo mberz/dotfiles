@@ -375,12 +375,15 @@ cmp.setup {
   },
 }
 
+-- lsp_lines config
+-- Don't show virtual text at the end of the line and don't show lsp_lines by default
 vim.diagnostic.config({
   virtual_text = false,
   underline = true,
   virtual_lines = false,
 })
 
+-- Add a toggle for lsp_lines
 vim.keymap.set(
   "",
   "<Leader>ll",
