@@ -445,5 +445,6 @@ require("null-ls").setup({
     }),
     require("null-ls").builtins.code_actions.cspell,
     require("null-ls").builtins.diagnostics.chktex,
+    require("null-ls").builtins.diagnostics.proselint,
   },
 })
