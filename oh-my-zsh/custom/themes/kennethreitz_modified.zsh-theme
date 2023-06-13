@@ -8,10 +8,15 @@ function virtualenv_info {
 
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
-PROMPT='%{$fg[green]%}[%D{%L:%M:%S}]\
-%{$fg[blue]%}$(virtualenv_info)%{$reset_color%} \
-\
-%{$fg[red]%}%(!.#.»)%{$reset_color%} '
+# Prompt left
+PROMPT='%{$fg[green]%}[%D{%L:%M:%S}] '
+PROMPT+="%F{yellow}%n%f"  # Magenta user name
+PROMPT+="%F{yellow}@"
+PROMPT+="%F{yellow}${${(%):-%m}}%f " # host name
+PROMPT+='%{$fg[blue]%}$(virtualenv_info)%{$reset_color%} '
+PROMPT+='%{$fg[red]%}%(!.#.»)%{$reset_color%} '
+
+# Prompt right
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 RPS1='%{$fg[blue]%}%~%{$reset_color%} $(git_prompt_info) ${return_code}'
 
