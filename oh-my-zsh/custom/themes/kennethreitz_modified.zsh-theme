@@ -13,7 +13,7 @@ PROMPT='%{$fg[green]%}[%D{%L:%M:%S}] '
 PROMPT+="%F{yellow}%n%f"  # Magenta user name
 PROMPT+="%F{yellow}@"
 PROMPT+="%F{yellow}${${(%):-%m}}%f " # host name
-PROMPT+='%{$fg[blue]%}($(virtualenv_info))%{$reset_color%} '
+PROMPT+='%{$fg[blue]%}$(virtualenv_info)%{$reset_color%} '
 PROMPT+='%{$fg[red]%}%(!.#.»)%{$reset_color%} '
 
 # Prompt right
