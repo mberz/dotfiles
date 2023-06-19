@@ -1,6 +1,6 @@
 function virtualenv_info {
-  if [[ -n "$CONDA_PROMPT_MODIFIER"  ]]; then
-    echo `basename $CONDA_PROMPT_MODIFIER`
+  if [[ -n "$CONDA_DEFAULT_ENV"  ]]; then
+    echo `basename $CONDA_DEFAULT_ENV`
   elif [[ -n "$VIRTUAL_ENV"  ]]; then
     echo `basename $VIRTUAL_ENV`
   fi
@@ -13,7 +13,7 @@ PROMPT='%{$fg[green]%}[%D{%L:%M:%S}] '
 PROMPT+="%F{yellow}%n%f"  # Magenta user name
 PROMPT+="%F{yellow}@"
 PROMPT+="%F{yellow}${${(%):-%m}}%f " # host name
-PROMPT+='%{$fg[blue]%}$(virtualenv_info)%{$reset_color%} '
+PROMPT+='%{$fg[blue]%}($(virtualenv_info))%{$reset_color%} '
 PROMPT+='%{$fg[red]%}%(!.#.»)%{$reset_color%} '
 
 # Prompt right
