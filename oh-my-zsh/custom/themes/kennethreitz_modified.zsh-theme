@@ -10,11 +10,12 @@ local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 # Prompt left
 PROMPT='%{$fg[green]%}[%D{%L:%M:%S}] '
-PROMPT+="%F{yellow}%n%f"  # Magenta user name
+PROMPT+="%F{yellow}%n%f"  # user name
 PROMPT+="%F{yellow}@"
-PROMPT+="%F{yellow}${${(%):-%m}}%f " # host name
-PROMPT+='%{$fg[blue]%}$(virtualenv_info)%{$reset_color%} '
-PROMPT+='%{$fg[red]%}%(!.#.»)%{$reset_color%} '
+PROMPT+="%F{yellow}${${(%):-%m}} ::%f " # host name
+PROMPT+='%{$fg[white]%}$(virtualenv_info)%{$reset_color%} ' # virtual environment
+PROMPT+='%{$fg[blue]%}%c '
+PROMPT+='%{$fg[red]%}%(!.#.»)%{$reset_color%} ' # arrow symbol
 
 # Prompt right
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
