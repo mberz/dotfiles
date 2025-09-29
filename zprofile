@@ -1,9 +1,10 @@
-# export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
-# export JAVA_TOOL_OPTIONS='-Djava.net.preferIPv4Stack=true'
-
-# Add Python from Homebrew to the path
-export PATH=/usr/local/opt/python/libexec/bin:$PATH
-
 # Add homebrew to the path
-export PATH=/usr/local/bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# ~/.tmux/plugins
+export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+# ~/.config/tmux/plugins
+export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
